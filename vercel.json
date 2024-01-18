@@ -5,5 +5,11 @@
         "src": "/server/dist/server.bundle.js",
         "use": "@now/node"
       }
-    ]
+      
+    ],  "routes": [
+        {
+          "src": "/(.*)",
+          "dest": "/server/dist/server.bundle.js"
+        }
+      ]
   }
