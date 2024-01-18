@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, '../../client/dist')));
 app.get('/v1', (req, res) => {
   res.status(200).json({message:"ok"})
 });
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/dist', 'index.html'));
 });
 
