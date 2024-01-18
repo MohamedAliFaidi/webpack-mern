@@ -2,14 +2,8 @@
     "version": 2,
     "builds": [
       {
-        "src": "server/dist/server.bundle.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "client//dist/**",
-        "use": "@vercel/static"
+        "src": "/server/dist/server.bundle.js",
+        "use": "@now/node"
       }
-    
     ]
   }
-  
