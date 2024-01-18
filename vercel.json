@@ -9,16 +9,7 @@
         "src": "client//dist/**",
         "use": "@vercel/static"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "server/dist/server.bundle.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "client/dist/$1"
-      }
+    
     ]
   }
   
