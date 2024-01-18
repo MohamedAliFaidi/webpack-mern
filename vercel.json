@@ -8,8 +8,12 @@
       
     ],  "routes": [
         {
-          "src": "/(.*)",
+          "src": "/v1/(.*)",
           "dest": "/server/dist/server.bundle.js"
+        },
+        {
+          "src": "/(.*)",
+          "dest": "client/dist/index.html"
         }
       ]
   }
