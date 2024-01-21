@@ -4,18 +4,18 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(helmet())
-app.use(helmet.hidePoweredBy())
-app.use(helmet.frameguard({action: 'deny'}))
-app.use(helmet.xssFilter())
-app.use(helmet.noSniff())
-app.use(helmet.ieNoOpen())
-app.use(helmet.hsts({maxAge:90*24*60*60 , force: true}))
-app.use(helmet.dnsPrefetchControl())
+// app.use(helmet())
+// app.use(helmet.hidePoweredBy())
+// app.use(helmet.frameguard({action: 'deny'}))
+// app.use(helmet.xssFilter())
+// app.use(helmet.noSniff())
+// app.use(helmet.ieNoOpen())
+// app.use(helmet.hsts({maxAge:90*24*60*60 , force: true}))
+// app.use(helmet.dnsPrefetchControl())
 
 
 app.use(cors({
-  origin: 'https://client-delta-gold.vercel.app',
+  origin: '*',
   credentials: true
 }))
 

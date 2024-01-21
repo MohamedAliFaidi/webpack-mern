@@ -12,6 +12,7 @@
           "dest": "/dist/server.bundle.js"
           
         }
+        
 
       ]
   }
