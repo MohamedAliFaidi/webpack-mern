@@ -30,16 +30,39 @@ app.use((req, res, next) => {
   next();
 });
 
+const allowCors = fn => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  // another common pattern
+  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+  if (req.method === 'OPTIONS') {
+    res.status(200).end()
+    return
+  }
+  return await fn(req, res)
+}
+
+allowCors(app.get('/v1', (req, res) => {
+  console.log(req.headers)
+  console.log(req.ip,req.ips)
+  res.status(200).json({message:"ok"})
+})
+)
 // Your other middleware and routes here
 
 // Serve static files from the React app
 
 // Catch-all route to serve the React app
-app.get('/v1', (req, res) => {
-  console.log(req.headers)
-  console.log(req.ip,req.ips)
-  res.status(200).json({message:"ok"})
-});
+// app.get('/v1', (req, res) => {
+//   console.log(req.headers)
+//   console.log(req.ip,req.ips)
+//   res.status(200).json({message:"ok"})
+// });
 
 
 
