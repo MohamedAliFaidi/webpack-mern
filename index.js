@@ -22,7 +22,7 @@ app.use(cors({
 app.options('*', cors());
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE',"Access-Control-Allow-Origin");
   // Add other headers as needed
   next();
 });
