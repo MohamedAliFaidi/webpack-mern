@@ -22,7 +22,7 @@ app.use(
 );
 
 app.use(cors({
-  origin: 'https://client-delta-gold.vercel.app',
+  origin: ['https://client-delta-gold.vercel.app',"https://client-jnz9w24yk-mohamedalifaidi.vercel.app"],
   credentials: true
 }))
 
