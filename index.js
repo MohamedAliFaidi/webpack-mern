@@ -21,6 +21,11 @@ app.use(
   })
 );
 
+app.use(cors({
+  origin: '*',
+  credentials: true
+}))
+
 // Your other middleware and routes here
 
 // Serve static files from the React app
