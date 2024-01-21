@@ -12,14 +12,7 @@ app.use(helmet.noSniff())
 app.use(helmet.ieNoOpen())
 app.use(helmet.hsts({maxAge:90*24*60*60 , force: true}))
 app.use(helmet.dnsPrefetchControl())
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-    },
-  })
-);
+
 
 app.use(cors({
   origin: ['https://client-delta-gold.vercel.app',"https://client-jnz9w24yk-mohamedalifaidi.vercel.app"],
