@@ -23,12 +23,12 @@ app.options('*', cors());
 
 
 
-allowCors(app.get('/v1', (req, res) => {
+app.get('/v1', (req, res) => {
   console.log(req.headers)
   console.log(req.ip,req.ips)
   res.status(200).json({message:"ok"})
 })
-)
+
 // Your other middleware and routes here
 
 // Serve static files from the React app
