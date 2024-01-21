@@ -11,7 +11,7 @@ module.exports = {
   externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
 
   output: {
-    filename: 'server.bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [new CompressionPlugin()],
