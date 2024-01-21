@@ -15,7 +15,7 @@ app.use(helmet.dnsPrefetchControl())
 
 
 app.use(cors({
-  origin: ['https://client-delta-gold.vercel.app',"https://client-jnz9w24yk-mohamedalifaidi.vercel.app"],
+  origin: 'https://client-delta-gold.vercel.app',
   credentials: true
 }))
 
