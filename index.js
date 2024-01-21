@@ -19,6 +19,14 @@ app.use(cors({
   credentials: true
 }))
 
+app.options('*', cors());
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  // Add other headers as needed
+  next();
+});
+
 // Your other middleware and routes here
 
 // Serve static files from the React app
