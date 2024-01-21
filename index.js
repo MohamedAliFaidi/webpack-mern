@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 
 const app = express();
+const less = require('serverless-http');
 
 // app.use(helmet())
 // app.use(helmet.hidePoweredBy())
@@ -70,3 +71,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+module.exports.handler = less(app);
+
